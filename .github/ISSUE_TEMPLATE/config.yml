@@ -1,4 +1,5 @@
-  name: LEDTREEPROJECT
-    description: Nothing but School
-  body:
-    -
+blank_issues_enabled: true
+contact_links:
+    name: TheLEDTree
+    url: github.com/TonyW-44
+    about: i dont want to be here.
