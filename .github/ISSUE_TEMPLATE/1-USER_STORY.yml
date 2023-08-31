@@ -1,7 +1,7 @@
 name: User Story
 description: Independent, negotiable, Valuable, Estimable, Small and Testable description of work that needs to be done from the perspective of the user.
 title: "[User Story] <title>"
-labels: ["User Story"]
+labels: ["User Stories"]
 projects: ["LED TREE PROJECT"]
 body:
   - type: input
