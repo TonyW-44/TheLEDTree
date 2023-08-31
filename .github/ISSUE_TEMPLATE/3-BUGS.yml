@@ -2,7 +2,7 @@ name: Bug Report
 description: File a bug report here
 title: "[BUG]: "
 labels: ["Bug"]
-assignees: [""]
+projects: ["LED TREE PROJECT"]
 body:
   - type: markdown
     attributes:
