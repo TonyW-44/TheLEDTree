@@ -2,7 +2,7 @@ name: Task
 description: A part of work that needs to be done to fulfill a User-Story.
 title: "[Task] <title>"
 labels: ["Tasks"]
-projects: ["LED TREE PROJECT"]
+projects: ["TonyW-44/2"]
 body:
   - type: textarea
     id: work-to-be-done
