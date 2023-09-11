@@ -1,7 +1,7 @@
 import com.pi4j.io.gpio.*; // imports the Pi4j that needs to be installed on the raspberry pi
 import java.util.concurrent.TimeUnit; // this is a time related operation for sleeping threads
 
-public class LEDColorController { // self explanatory
+public class LEDColorController { // Public or private?
     public static void main(String[] args) throws InterruptedException { // throws InterruptedException for color change
         GpioController gpio = GpioFactory.getInstance();
         GpioPinDigitalOutput colorPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "Color", PinState.LOW);
