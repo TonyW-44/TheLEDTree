@@ -13,7 +13,7 @@ public class LEDColorController { // self explanatory
             while (true) {
                 colorPin.toggle();
                 TimeUnit.SECONDS.sleep(1); // all three of these are pausing for 1 second before changing
-                colorPin.toggle();
+                colorPin.toggle(); // Have to choose colors or repeat this for more color options
                 TimeUnit.SECONDS.sleep(1); // change second to fit whatever we want
                 colorPin.toggle();
                 TimeUnit.SECONDS.sleep(1);
