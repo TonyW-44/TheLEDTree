@@ -1,4 +1,4 @@
-/*
+
 import com.pi4j.io.gpio.*; // imports the Pi4j that needs to be installed on the raspberry pi
 import java.util.concurrent.TimeUnit; // this is a time related operation for sleeping threads
 
@@ -25,4 +25,3 @@ public class LEDColorController { // Public or private?
     }
 }
 
- */
