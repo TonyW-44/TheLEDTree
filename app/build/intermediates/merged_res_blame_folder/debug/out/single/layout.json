@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.example.theledtreecontroller.app-mergeDebugResources-39:/layout/fragment_second.xml",
+        "source": "com.example.theledtreecontroller.app-main-42:/layout/fragment_second.xml"
+    },
+    {
+        "merged": "com.example.theledtreecontroller.app-mergeDebugResources-39:/layout/content_main.xml",
+        "source": "com.example.theledtreecontroller.app-main-42:/layout/content_main.xml"
+    },
+    {
+        "merged": "com.example.theledtreecontroller.app-mergeDebugResources-39:/layout/fragment_first.xml",
+        "source": "com.example.theledtreecontroller.app-main-42:/layout/fragment_first.xml"
+    },
+    {
+        "merged": "com.example.theledtreecontroller.app-mergeDebugResources-39:/layout/activity_main.xml",
+        "source": "com.example.theledtreecontroller.app-main-42:/layout/activity_main.xml"
+    }
+]
