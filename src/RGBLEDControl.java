@@ -7,20 +7,21 @@ import com.diozero.api.PinState;
 
 public class RGBLEDControl {
     private static final Logger logger = LoggerFactory.getLogger(RGBLEDControl.class);
+
     public static void main(String[] args) {
-        // Specify the GPIO pins for the RGB LED (change these to match our setup)
-        int redPin = 18;    // GPIO pin for red color
-        int greenPin = 22;  // GPIO pin for green color
-        int bluePin = 37;   // GPIO pin for blue color
+        // Specify the BCM GPIO pins for the RGB LED
+        int redPin = 17;    // GPIO pin for red color (BCM 17)
+        int greenPin = 18;  // GPIO pin for green color (BCM 18)
+        int bluePin = 22;   // GPIO pin for blue color (BCM 22)
 
         DigitalOutputDevice red = null;
         DigitalOutputDevice green = null;
         DigitalOutputDevice blue = null;
 
         try {
-            red = GpioFactory.getInstance().provisionDigitalOutputDevice(redPin, PinState.LOW);
-            green = GpioFactory.getInstance().provisionDigitalOutputDevice(greenPin, PinState.LOW);
-            blue = GpioFactory.getInstance().provisionDigitalOutputDevice(bluePin, PinState.LOW);
+            red = GpioFactory.getInstance().provisionDigitalOutputDevice(redPin, PinState.LOW, GpioPullUpDown.PULL_DOWN);
+            green = GpioFactory.getInstance().provisionDigitalOutputDevice(greenPin, PinState.LOW, GpioPullUpDown.PULL_DOWN);
+            blue = GpioFactory.getInstance().provisionDigitalOutputDevice(bluePin, PinState.LOW, GpioPullUpDown.PULL_DOWN);
 
             // Change the colors of the RGB LED by setting the states of the individual color pins
             while (true) {
@@ -66,17 +67,19 @@ public class RGBLEDControl {
                 blue.on();
                 SleepUtil.sleepMillis(1000);
             }
-        }
-    }
-
-    // Helper method to sleep for a specified number of milliseconds
-        private static void sleep(int milliseconds) {
-        try {
-            Thread.sleep(milliseconds);
         } catch (Exception e) {
             logger.error("An error occurred", e);
+        } finally {
+            // Make sure to close the GPIO resources when done
+            if (red != null) {
+                red.close();
+            }
+            if (green != null) {
+                green.close();
+            }
+            if (blue != null) {
+                blue.close();
+            }
         }
     }
-
 }
-
