@@ -7,7 +7,5 @@ public class Main {
 
         // Uses Application class, launch method, to launch the NumberSequenceUI class directly
         Application.launch(NumberSequenceUI.class, args);
-
-
     }
 }
