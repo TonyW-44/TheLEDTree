@@ -12,7 +12,7 @@ public class NumberSequenceUI extends Application { // NumberSequenceUI uses App
 
     private Label output = new Label();  // Creates label object that is used to output the array index as text
     // Not set since the output text is variable
-    SequenceArray sA = new SequenceArray(); // Creates object out of class SequenceArray where the Light Sequences
+    SequenceArray sA = new SequenceArray(); // Creates object out of class SequenceArray where the Sequences
     // are stored in an array
 
     @Override
@@ -30,9 +30,9 @@ public class NumberSequenceUI extends Application { // NumberSequenceUI uses App
          */
         // !!! Need some way to abort the sequence once executed !!!
         // !!! Create number generator object to test cancel button !!!
-        sequence1Button.setOnAction(e -> displaySequence(sA.getIndex(0)));
-        sequence2Button.setOnAction(e -> displaySequence(sA.getIndex(1)));
-        sequence3Button.setOnAction(e -> displaySequence(sA.getIndex(2)));
+        sequence1Button.setOnAction(e -> displaySequence(0));
+        sequence2Button.setOnAction(e -> displaySequence(1));
+        sequence3Button.setOnAction(e -> displaySequence(2));
         exitAppButton.setOnAction(e -> System.exit(0));
 
         /* Vbox object. As I understand, Vbox is a container that will arrange the child (addAll) button vertically  */
@@ -54,15 +54,11 @@ public class NumberSequenceUI extends Application { // NumberSequenceUI uses App
     //Included a catch in case I modify this in the future and the index is out of bounds
     private void displaySequence(int index) {
         try {
-            int sequenceValue = index;
-            output.setText("Sequence " + sequenceValue);
-        } catch (IndexOutOfBoundsException e) {
-            output.setText("Invalid Selection."); // Handle invalid index
+            String sequenceValue = sA.getObjIndex(index);
+            output.setText(sequenceValue);
+        } catch (IllegalArgumentException e) {
+            output.setText("Invalid Selection: " + e.getMessage());
         }
-
-
-
     }
-
 
 }

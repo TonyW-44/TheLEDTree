@@ -1,9 +1,11 @@
 package ScrumTeam1.LEDTree;
 
-import com.pi4j.io.gpio.*; // imports the Pi4j that needs to be installed on the raspberry pi
-import java.util.concurrent.TimeUnit; // this is a time related operation for sleeping threads
+
+//import com.pi4j.io.gpio.*; // imports the Pi4j that needs to be installed on the raspberry pi
+//import java.util.concurrent.TimeUnit; // this is a time related operation for sleeping threads
 
 public class LEDColorController { // Public or private?
+    /*
     public static void main(String[] args) throws InterruptedException { // throws InterruptedException for color change
         GpioController gpio = GpioFactory.getInstance();
         GpioPinDigitalOutput redPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "Red", PinState.LOW);
@@ -24,5 +26,9 @@ public class LEDColorController { // Public or private?
             gpio.shutdown();
         }
     }
+
+ */
 }
+
+
 
