@@ -5,6 +5,10 @@ import com.diozero.api.DigitalOutputDevice;
 import com.diozero.api.GpioFactory;
 import com.diozero.api.PinState;
 
+/**
+ *
+ */
+
 public class RGBLEDControl {
     private static final Logger logger = LoggerFactory.getLogger(RGBLEDControl.class);
 
