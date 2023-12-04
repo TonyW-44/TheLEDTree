@@ -34,12 +34,6 @@ public class SequenceArray {
     // Loop that iterates over the actual sequence array to find an index value.
 
     // Depreciated old method
-    public String getObjIndex(int index) {
-        if (index >= 0 && index < objSeq.length) {
-            return objSeq[index].getStringValue();
-        }
-        throw new IllegalArgumentException("Invalid Selection: Index out of bounds");
-    }
 
     public void getObjIndexShutdown() {
         actualLightSequence.shutdown();
