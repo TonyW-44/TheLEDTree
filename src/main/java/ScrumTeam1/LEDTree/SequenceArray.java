@@ -11,17 +11,15 @@ public class SequenceArray {
     Sequence seq1 = new Sequence1();
     Sequence seq2 = new Sequence2();
     Sequence seq3 = new Sequence3();
+    LEDColorController actualLightSequence = new LEDColorController();
+
 
     public SequenceArray() {
-        sequences = new int[]{1, 2, 3}; // Initializes the array with placeholders.
+        sequences = new int[]{1, 2, 3, 4}; // Initializes the array with placeholders.
         // I'm not sure how to implement the actual sequences yet though.
 
-        objSeq = new Sequence[]{seq1, seq2, seq3};
-
-
+        objSeq = new Sequence[]{seq1, seq2, seq3, (Sequence) actualLightSequence};
     }
-
-
 
     // Loop that iterates over the test array to find an index value.
     // "Index must be greater than or equal to 0 and no higher then the array length
@@ -34,12 +32,24 @@ public class SequenceArray {
     }
 
     // Loop that iterates over the actual sequence array to find an index value.
-    public String getObjIndex(int index) {
-        if (index >= 0 && index < objSeq.length) {
-            return objSeq[index].getStringValue();
-        }
 
-        throw new IllegalArgumentException("Invalid Selection: Index out of bounds");
+    // Depreciated old method
+
+    public void getObjIndexShutdown() {
+        actualLightSequence.shutdown();
+    }
+
+    // New method that uses conditionals to return two object types for the array
+    public String getObjIndex(int index) throws InterruptedException {
+        Object sequenceObj = getIndex(index);
+        if (sequenceObj instanceof Sequence) {
+            return ((Sequence) sequenceObj).getStringValue();
+        } else if (sequenceObj instanceof LEDColorController) {
+            ((LEDColorController) sequenceObj).runColorSequence(20, 2, 1);
+            return "LED Sequence Cancelled";
+        } else {
+            throw new IllegalArgumentException("Invalid Selection: Index out of bounds");
+        }
     }
 
 }
