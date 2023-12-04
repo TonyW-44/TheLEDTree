@@ -21,6 +21,8 @@ public class NumberSequenceUI extends Application {
     // are stored in an array
     private SequenceArray sA = new SequenceArray();
 
+
+
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("The LED Tree!"); // Top windows bar text
@@ -31,14 +33,16 @@ public class NumberSequenceUI extends Application {
         Button sequence1Button = createStyledButton("Sequence 1", "white");
         Button sequence2Button = createStyledButton("Sequence 2", "white");
         Button sequence3Button = createStyledButton("Sequence 3", "white");
-        //Button cancelSequenceButton = createStyledButton("Cancel Sequence");
+        Button actualSequenceButton = createStyledButton("Actual Light Sequence", "white");
+        Button cancelSequenceButton = createStyledButton("Cancel Sequence", "white");
         Button exitAppButton = createStyledButton("Exit", "white");
 
         // Sets what each button does -  pull up "sequence" from array, or close program
         sequence1Button.setOnAction(e -> displaySequence(0));
         sequence2Button.setOnAction(e -> displaySequence(1));
         sequence3Button.setOnAction(e -> displaySequence(2));
-        //cancelSequenceButton.setOnAction((e -> cancelSequence()));
+        actualSequenceButton.setOnAction(e -> sA.getObjIndex(3)) ;
+        cancelSequenceButton.setOnAction((e -> sA.getObjIndexShutdown())); //!!!!!!
         exitAppButton.setOnAction(e -> System.exit(0));
 
         // Sets layout of the window
@@ -64,6 +68,7 @@ public class NumberSequenceUI extends Application {
         grid.add(sequence1Button, 0, 1); // Column 0, row 1
         grid.add(sequence2Button, 0, 2); // C0, r2
         grid.add(sequence3Button, 0, 3); // C0, row3
+        grid.add(actualSequenceButton, 0,4);
         grid.add(exitAppButton, 3, 1); // etc.
 
         // Create a StackPane for the output section
