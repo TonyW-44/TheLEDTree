@@ -16,13 +16,12 @@ public class LEDColorController {
     // Light sequence class
 
     // variable where Gpio can store pin values
-    /*
+
     private GpioController gpio;
     private GpioPinDigitalOutput redPin;
     private GpioPinDigitalOutput bluePin;
     private GpioPinDigitalOutput greenPin;
 
-     */
 
     // Constructor that initializes each color pin with the variables. Because I had trouble understanding how
     // Gpio works, and I was lazy I asked chatGPT to help me set this up
