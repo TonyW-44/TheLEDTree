@@ -13,6 +13,7 @@ public class SequenceArray {
     Sequence seq3 = new Sequence3();
     LEDColorController actualLightSequence = new LEDColorController();
 
+
     public SequenceArray() {
         sequences = new int[]{1, 2, 3, 4}; // Initializes the array with placeholders.
         // I'm not sure how to implement the actual sequences yet though.
