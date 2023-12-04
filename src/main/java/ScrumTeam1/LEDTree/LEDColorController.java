@@ -23,6 +23,7 @@ public class LEDColorController {
     private GpioPinDigitalOutput greenPin;
 
 
+
     // Constructor that initializes each color pin with the variables. Because I had trouble understanding how
     // Gpio works, and I was lazy I asked chatGPT to help me set this up
     public LEDColorController() {
